@@ -1,13 +1,12 @@
 package org.joksin.multimodule.validation.core.model;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
-@Builder
-public class Product {
+@SuperBuilder
+public class Product extends GenericEntity {
 
-    private final Integer id;
     private final String name;
     private final Double price;
     private final Manufacturer manufacturer;

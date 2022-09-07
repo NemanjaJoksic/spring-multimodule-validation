@@ -1,13 +1,12 @@
 package org.joksin.multimodule.validation.core.model;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
-@Builder
-public class Manufacturer {
+@SuperBuilder
+public class Manufacturer extends GenericEntity {
 
-    private final Integer id;
     private final String name;
     private final Country country;
 

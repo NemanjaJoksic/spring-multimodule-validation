@@ -7,7 +7,7 @@ import lombok.Getter;
 @Builder
 public class CountryDTO {
 
-    private final String id;
+    private final Integer id;
     private final String name;
     private final String isoCode;
 

@@ -9,7 +9,8 @@ import lombok.Getter;
 public enum Country {
 
     SERBIA(1, "Serbia", "SRB"),
-    MONTENEGRO(2, "Montenegro", "MNE");
+    MONTENEGRO(2, "Montenegro", "MNE"),
+    CROATIA(3, "Croatia", "CRO");
 
     private final Integer id;
     private final String name;
