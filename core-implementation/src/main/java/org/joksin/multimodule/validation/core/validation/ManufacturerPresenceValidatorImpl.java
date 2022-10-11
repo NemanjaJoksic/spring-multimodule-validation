@@ -5,6 +5,7 @@ import org.joksin.multimodule.validation.core.repository.ManufacturerRepository;
 import org.joksin.multimodule.validation.core.validation.util.ConstraintValidatorUtil;
 import org.springframework.stereotype.Component;
 
+import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 @Component

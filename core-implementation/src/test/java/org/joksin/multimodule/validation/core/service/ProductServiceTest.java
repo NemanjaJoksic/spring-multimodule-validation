@@ -1,7 +1,6 @@
 package org.joksin.multimodule.validation.core.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.joksin.multimodule.validation.core.model.Product;
 import org.joksin.multimodule.validation.core.model.request.CreateProductRequest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,7 @@ import javax.validation.ConstraintViolationException;
 public class ProductServiceTest {
 
     @Autowired
-    private ProductService productService;
+    private ProductServiceImpl productService;
 
     @Test
     public void testProductNameMustNotBeNullOrBlank() {
@@ -95,13 +94,13 @@ public class ProductServiceTest {
             CreateProductRequest createProductRequest = CreateProductRequest.builder()
                     .name("TEST PRODUCT")
                     .price(100.0)
-                    .manufacturerId(2)
+                    .manufacturerId(200)
                     .build();
             productService.create(createProductRequest);
         });
 
         log.info("exception: {}", exception.getMessage());
-        Assertions.assertTrue(exception.getMessage().contains("create.createProductRequest.manufacturerId: Manufacturer with id 2 does not exist"));
+        Assertions.assertTrue(exception.getMessage().contains("create.createProductRequest.manufacturerId: Manufacturer with id 200 does not exist"));
     }
 
 }

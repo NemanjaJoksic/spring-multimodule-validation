@@ -14,16 +14,17 @@
     </parent>
 
     <groupId>org.joksin</groupId>
-    <artifactId>spring-multimodule-validation-application</artifactId>
+    <artifactId>spring-multimodule-validation-core-api</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.joksin</groupId>
-            <artifactId>spring-multimodule-validation-rest-api</artifactId>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>org.joksin</groupId>
-            <artifactId>spring-multimodule-validation-core-implementation</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

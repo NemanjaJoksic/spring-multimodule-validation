@@ -15,20 +15,23 @@ import java.util.Optional;
 @Service
 @Validated
 @AllArgsConstructor
-public class ProductService {
+public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final ManufacturerRepository manufacturerRepository;
 
+    @Override
     public Optional<Product> findById(Integer productId) {
         Product product = productRepository.findById(productId);
         return Optional.ofNullable(product);
     }
 
+    @Override
     public List<Product> findAll() {
         return productRepository.findAll();
     }
 
+    @Override
     public Product create(@Valid CreateProductRequest createProductRequest) {
         Product product = Product.builder()
                 .name(createProductRequest.getName())

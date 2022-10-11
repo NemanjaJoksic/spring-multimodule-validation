@@ -29,7 +29,7 @@
 
         <dependency>
             <groupId>org.joksin</groupId>
-            <artifactId>spring-multimodule-validation-core</artifactId>
+            <artifactId>spring-multimodule-validation-core-api</artifactId>
         </dependency>
     </dependencies>
 

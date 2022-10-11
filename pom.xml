@@ -17,9 +17,10 @@
     <version>1.0</version>
 
     <modules>
-        <module>core</module>
-        <module>rest-api</module>
         <module>application</module>
+        <module>core-api</module>
+        <module>core-implementation</module>
+        <module>rest-api</module>
     </modules>
 
     <properties>
@@ -36,7 +37,12 @@
 
             <dependency>
                 <groupId>org.joksin</groupId>
-                <artifactId>spring-multimodule-validation-core</artifactId>
+                <artifactId>spring-multimodule-validation-core-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.joksin</groupId>
+                <artifactId>spring-multimodule-validation-core-implementation</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

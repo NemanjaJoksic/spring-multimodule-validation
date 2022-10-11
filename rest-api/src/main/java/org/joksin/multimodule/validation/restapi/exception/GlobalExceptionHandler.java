@@ -1,12 +1,13 @@
 package org.joksin.multimodule.validation.restapi.exception;
 
-import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import javax.validation.Path;
+import java.util.Iterator;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -21,7 +22,12 @@ public class GlobalExceptionHandler {
     }
 
     private String getFieldName(ConstraintViolation<?> violation) {
-        return ((PathImpl) violation.getPropertyPath()).getLeafNode().getName();
+        Iterator<Path.Node> propertyPathIterator = violation.getPropertyPath().iterator();
+        Path.Node leafNode = propertyPathIterator.next();
+        while(propertyPathIterator.hasNext()) {
+            leafNode = propertyPathIterator.next();
+        }
+        return leafNode.getName();
     }
 
 }
