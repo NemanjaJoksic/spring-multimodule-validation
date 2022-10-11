@@ -8,8 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ConstraintValidatorUtil {
 
-    public static void setCustomMessage(ConstraintValidatorContext context, String message) {
-        context.disableDefaultConstraintViolation();
+    public static void addConstraintViolation(ConstraintValidatorContext context, String message) {
         context.buildConstraintViolationWithTemplate(message).addConstraintViolation();
     }
 
