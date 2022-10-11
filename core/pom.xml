@@ -14,7 +14,7 @@
     </parent>
 
     <groupId>org.joksin</groupId>
-    <artifactId>spring-multimodule-validation-core-implementation</artifactId>
+    <artifactId>spring-multimodule-validation-core</artifactId>
 
     <dependencies>
         <dependency>
