@@ -8,7 +8,6 @@ import org.joksin.multimodule.validation.core.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +31,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product create(@Valid CreateProductRequest createProductRequest) {
+    public Product create(CreateProductRequest createProductRequest) {
         Product product = Product.builder()
                 .name(createProductRequest.getName())
                 .price(createProductRequest.getPrice())
